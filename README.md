@@ -1,0 +1,1 @@
+# CORS Proxy Server made using Go and Gin.
