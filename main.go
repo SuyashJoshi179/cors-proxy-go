@@ -2,9 +2,11 @@ package main
 
 import (
 	// "fmt"
+	"log"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
+	"os"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -87,5 +89,11 @@ func main() {
 	router := gin.Default()
 	router.Any("/*proxyPath", process)
 
-	router.Run("localhost:4000")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	if err := router.Run(":" + port); err != nil {
+        log.Panicf("error: %s", err)
+	}
 }
