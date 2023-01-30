@@ -11,9 +11,10 @@ import (
 )
 
 var allowedUrls = []string{
-    "",
 	"http://localhost:3000",
 	"https://localhost:3000",
+	"https://crypt-web.web.app",
+	"https://crypt-web.web.app/",
 }
 
 // function to check whether the backendServer parameter is a valid url or not
